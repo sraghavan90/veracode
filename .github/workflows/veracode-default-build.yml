@@ -50,7 +50,7 @@ jobs:
 
   build-linux:
     needs: build-prepare
-    runs-on: ${{ fromJSON(inputs.build_runs_on) }}
+    runs-on: gradle:jdk25-alpine
     container:
       image: ${{ inputs.build_packager_image }}
     name: Build on Linux
