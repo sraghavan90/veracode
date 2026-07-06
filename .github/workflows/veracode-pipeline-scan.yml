@@ -54,6 +54,10 @@ on:
       debug:
         required: false
         type: string
+      esd:
+        required: false
+        type: string
+        default: 'false'
 
 jobs:
   prepare_pipeline_scan:
@@ -125,6 +129,7 @@ jobs:
           artifact_name: ${{ matrix.file }}
           debug: ${{ inputs.debug == true && '1' || '0' }}
           workflow_app: true
+          esd: ${{ inputs.esd }}
     
       - name: Veracode Pipeline Results
         if: always()
