@@ -55,7 +55,7 @@ on:
         required: false
         type: string
       esd:
-        required: false
+        required: true
         type: string
         default: 'false'
 
